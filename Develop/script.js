@@ -25,33 +25,11 @@ $(document).ready(function () {
   var hour5Input = $('#hour-5 .description');
   var timeBlock = $(".time-block");
 
-
-  //Event listener for clicking hour9 save button
-  // saveBtn.on('click', function(event) {
-  // event.preventDefault();
-  // hour9Val = hour9Input.val();
-  // console.log(hour9Val);
-
+//Display current hour and day in header
   var currentHour = dayjs().format('HH');
-  var hour9 = $('hour9');
-  console.log(currentHour);
-  if (currentHour == 9) {
-    hour9.removeClass('past');
-    hour9.removeClass('future');
-    hour9.addClass('present');
-  } else if (currentHour > 9) {
-    hour9.removeClass('present');
-    hour9.removeClass('future');
-    hour9.addClass('past');
-  } else if (currentHour < 9) {
-    hour9.removeClass('past');
-    hour9.removeclass('present');
-    hour9.addClass('future');
-  }
-
-  //set item into localstorage
-  // localStorage.setItem("hour9", hour9Val);
-  //make for loop to target save buttons and apply past, present, future
+  
+  //for loop to target save buttons and apply past, present, future
+  //set item into localstorage or get from local storage as iterating through for loop
   for (let i = 0; i < 9; i++) {
     console.log(hourInput[i].parentElement)
     if (currentHour == (i+9)) {
@@ -76,7 +54,9 @@ $(document).ready(function () {
 
 });
 
-//used above method because this is extremely repetitive
+/////////////////////////////////////////////////////////
+//used above method because this is extremely repetitive//
+////////////////////////////////////////////////////////
 //Event listener for clicking hour10 save button
 // saveBtn.on('click', function(event) {
 //   event.preventDefault();
